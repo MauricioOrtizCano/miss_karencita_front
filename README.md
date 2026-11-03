@@ -1,6 +1,6 @@
 # Miss Karencita — Frontend (Landing)
 
-Landing page desarrollado en **Next.js / React** para **Miss Karencita**, un servicio de planes de estimulación temprana para bebés diseñados por una Licenciada en Educación Infantil.
+Landing page desarrollado en **Next.ts / React** para **Miss Karencita**, un servicio de planes de estimulación temprana para bebés diseñados por una Licenciada en Educación Infantil.
 
 En esta primera etapa el objetivo es **validar la demanda**: presentar el servicio, generar confianza y capturar los datos de contacto de las familias interesadas a través de un formulario. Esos _leads_ se envían al [backend en Laravel](#integración-con-el-backend) para su almacenamiento.
 
@@ -25,9 +25,9 @@ En esta primera etapa el objetivo es **validar la demanda**: presentar el servic
 
 ## Stack
 
-- **Next.js** 14+ (App Router)
+- **Next.ts** 14+ (App Router)
 - **React** 18+
-- **CSS**: [define aquí lo que uses — CSS Modules, Tailwind CSS, etc.]
+- **CSS**: [TS, CSS Modules, Tailwind CSS, etc.]
 - **Node.js** 18.18+ (requerido por Next.js)
 
 El backend se desarrolla por separado en **Laravel / MariaDB** y expone la API que este landing consume.
@@ -97,22 +97,22 @@ El landing es de una sola página, dividido en secciones (según la propuesta de
 ```
 src/
 ├── app/
-│   ├── layout.jsx            # Layout raíz, fuentes y metadata
-│   ├── page.jsx              # Landing: compone todas las secciones
+│   ├── layout.tsx            # Layout raíz, fuentes y metadata
+│   ├── page.tsx              # Landing: compone todas las secciones
 │   ├── globals.css           # Estilos globales y variables de marca
 │   └── politica-datos/
-│       └── page.jsx          # Política de tratamiento de datos
+│       └── page.tsx          # Política de tratamiento de datos
 ├── components/
-│   ├── Navbar.jsx
-│   ├── Hero.jsx              # Promesa principal + CTA
-│   ├── Problema.jsx          # Conecta con la duda del acudiente
-│   ├── ComoFunciona.jsx      # Los 4 pasos del servicio
-│   ├── SobreMi.jsx           # Perfil de la Licenciada (clave para convertir)
-│   ├── Diferencial.jsx       # Por qué no es contenido genérico
-│   ├── Testimonios.jsx       # Solo con testimonios reales
-│   ├── PreguntasFrecuentes.jsx
-│   ├── LeadForm.jsx          # Formulario de captura + consentimiento
-│   └── Footer.jsx            # Contacto y enlaces legales
+│   ├── Navbar.tsx
+│   ├── Hero.tsx              # Promesa principal + CTA
+│   ├── Problema.tsx          # Conecta con la duda del acudiente
+│   ├── ComoFunciona.tsx      # Los 4 pasos del servicio
+│   ├── SobreMi.tsx           # Perfil de la Licenciada (clave para convertir)
+│   ├── Diferencial.tsx       # Por qué no es contenido genérico
+│   ├── Testimonios.tsx       # Solo con testimonios reales
+│   ├── PreguntasFrecuentes.tsx
+│   ├── LeadForm.tsx          # Formulario de captura + consentimiento
+│   └── Footer.tsx            # Contacto y enlaces legales
 └── lib/
     └── api.js                # Cliente para llamar a la API
 ```
