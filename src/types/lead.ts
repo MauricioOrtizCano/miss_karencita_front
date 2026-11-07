@@ -21,3 +21,10 @@ export interface MethodResponse {
     data?: any;
     errors?: any;
 }
+
+export interface ChildFormProps {
+    childInfo: Child,
+    index: number,
+    handler: (pos: number, field: string, value: string) => void
+    handlerRemove: (pos: number) => void
+}
