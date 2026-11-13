@@ -5,6 +5,7 @@ import { useState } from "react"
 import { createLead } from "@/lib/api";
 import { LeadPayload, Child } from "@/types/lead";
 import { ChildForm } from "../ChildForm/ChildForm";
+import Swal from "sweetalert2";
 
 
 export const LeadForm = () => {
@@ -71,7 +72,12 @@ export const LeadForm = () => {
 
     const handlerRemove = (position: number) => {
         if (leadData.children.length === 1) {
-            alert('No es posible eliminar el último hijo')
+            Swal.fire({
+                title: 'Acción inválida',
+                text: 'No es posible eliminar el último hijo',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+            })
             return
         }
 
@@ -88,8 +94,12 @@ export const LeadForm = () => {
             const response = await createLead(leadData)
 
             if (!response.success) {
-                console.log(response.message)
-                alert(response.message)
+                Swal.fire({
+                    title: 'Ha ocurrido un error',
+                    text: 'No se pudo guardar la información. Por favor inténtalo de nuevo',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                })
                 return
             }
 
@@ -105,9 +115,21 @@ export const LeadForm = () => {
                     message: ''
                 }]
             })
-            alert(response.message)
+            
+            Swal.fire({
+                title: 'Registro exitoso',
+                text: 'Información guardada correctamente',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            })
         } catch (error) {
             console.error(error)
+            Swal.fire({
+                title: 'Ha ocurrido un error',
+                text: 'No pudimos conectar con el servidor, revisa tu conexión e intenta de nuevo',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            })
             return
         }
     }
