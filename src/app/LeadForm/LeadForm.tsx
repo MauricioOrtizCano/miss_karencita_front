@@ -140,41 +140,42 @@ export const LeadForm = () => {
                 <form
                     onSubmit={onSubmit}
                 >
-                    <label>
-                        <span>Nombre del acudiente*</span>
+                    <div className="relative mb-3">
+                        <i className="ti ti-user absolute left-4 top-1/2 -translate-y-1/2 text-[#c4a9b4] pointer-events-none" ></i>
                         <input
                             name="caregiverName"
                             type="text"
+                            placeholder="Tú nombre"
                             onChange={(e) => handlerChangeInput(e.target.name, e.target.value)}
                             value={leadData.caregiverName}
-                            className="peer ..."
+                            className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                         />
-                        <p className="invisible peer-invalid:visible ...">Por favor ingrese un nombre</p>
-                    </label>
+                    </div>
+                    <p className="invisible peer-invalid:visible ...">Por favor ingrese un nombre</p>
 
-                    <label>
-                        <span>Número de WhatsApp*</span>
+                    <div>
                         <input
                             name="caregiverWhatsapp"
                             type="text"
+                            placeholder="WhatsApp"
                             onChange={(e) => handlerChangeInput(e.target.name, e.target.value)}
                             value={leadData.caregiverWhatsapp}
-                            className="peer ..."
+                            className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition"
                         />
                         <p className="invisible peer-invalid:visible ...">Por favor ingrese un número de WhatsApp válido</p>
-                    </label>
+                    </div>
 
-                    <label>
-                        <span>Correo Electrónico</span>
+                    <div>
                         <input
                             name="caregiverEmail"
+                            placeholder="Correo"
                             type="text"
                             onChange={(e) => handlerChangeInput(e.target.name, e.target.value)}
                             value={leadData.caregiverEmail}
-                            className="peer ..."
+                            className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition"
                         />
                         <p className="invisible peer-invalid:visible ...">Por favor ingrese un correo válido</p>
-                    </label>
+                    </div>
 
                     {leadData.children.map((child, i) => {
                         return (
@@ -196,7 +197,7 @@ export const LeadForm = () => {
                     </button>
 
                     <hr></hr>
-                    <label>
+                    <div>
                         <input
                             name="caregiverDataAuthorization"
                             type="checkbox"
@@ -206,7 +207,7 @@ export const LeadForm = () => {
                         />
                         <span>Autoriza el tratamiento de sus datos.</span>
                         <p className="invisible peer-invalid:visible ...">Debe autorizar el tratamiento de datos para continuar</p>
-                    </label>
+                    </div>
 
                     <button
                         type="submit"
