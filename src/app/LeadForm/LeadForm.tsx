@@ -135,12 +135,14 @@ export const LeadForm = () => {
     }
     
     return (
-        <div>
-            <div>
+        <div className="grid gap-4 w-4/5 bg-[#fbeaf0] place-self-center py-[18px] text-[#8a3d5a] rounded-xl">
+            <div className="place-self-center w-4/5 grid gap-4">
+                <h4 className="place-self-center">Cuéntanos de tu bebé</h4>
                 <form
                     onSubmit={onSubmit}
+                    className="space-y-4"
                 >
-                    <div className="relative mb-3">
+                    <div className="relative">
                         <i className="ti ti-user absolute left-4 top-1/2 -translate-y-1/2 text-[#c4a9b4] pointer-events-none" ></i>
                         <input
                             name="caregiverName"
@@ -151,30 +153,29 @@ export const LeadForm = () => {
                             className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                         />
                     </div>
-                    <p className="invisible peer-invalid:visible ...">Por favor ingrese un nombre</p>
 
-                    <div>
+                    <div className="relative">
+                        <i className="ti ti-brand-whatsapp absolute left-4 top-1/2 -translate-y-1/2 text-[#c4a9b4] pointer-events-none" ></i>
                         <input
                             name="caregiverWhatsapp"
                             type="text"
                             placeholder="WhatsApp"
                             onChange={(e) => handlerChangeInput(e.target.name, e.target.value)}
                             value={leadData.caregiverWhatsapp}
-                            className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition"
+                            className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                         />
-                        <p className="invisible peer-invalid:visible ...">Por favor ingrese un número de WhatsApp válido</p>
                     </div>
 
-                    <div>
+                    <div className="relative">
+                        <i className="ti ti-mail absolute left-4 top-1/2 -translate-y-1/2 text-[#c4a9b4] pointer-events-none" ></i>
                         <input
                             name="caregiverEmail"
                             placeholder="Correo"
                             type="text"
                             onChange={(e) => handlerChangeInput(e.target.name, e.target.value)}
                             value={leadData.caregiverEmail}
-                            className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition"
+                            className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                         />
-                        <p className="invisible peer-invalid:visible ...">Por favor ingrese un correo válido</p>
                     </div>
 
                     {leadData.children.map((child, i) => {
@@ -192,28 +193,32 @@ export const LeadForm = () => {
                     <button
                         type="button"
                         onClick={handlerAdd}
+                        className="text-[#d4537e]"
                     >
-                        Agregar otro bebé
+                        + Agregar otro bebé
                     </button>
 
                     <hr></hr>
-                    <div>
+                    <div className="flex justify-start gap-4 items-center">
                         <input
                             name="caregiverDataAuthorization"
                             type="checkbox"
                             onChange={(e) => handlerCheckBox(e.target.checked)}
                             checked={leadData.caregiverDataAuthorization}
-                            className="peer ..."
+                            className="accent-pink-500"
                         />
-                        <span>Autoriza el tratamiento de sus datos.</span>
-                        <p className="invisible peer-invalid:visible ...">Debe autorizar el tratamiento de datos para continuar</p>
+                        <span className="grow">Autoriza el tratamiento de sus datos personales.</span>
                     </div>
 
+                    
                     <button
                         type="submit"
+                        className="flex items-center justify-center gap-2 bg-[#d85a30] w-full p-2 rounded-xl text-[#fff]"
                     >
+                        <i className="ti ti-send"></i>
                         Enviar
                     </button>
+                    
 
                 </form>
             </div>

@@ -6,68 +6,71 @@ export const ChildForm = ({handler, handlerRemove, childInfo, index}: ChildFormP
     
     
     return (
-        <div>
-            <label>
-                <span>Nombre del/la bebé*</span>
+        <div className="bg-[#fff] rounded-xl p-4 my-2 space-y-4">
+            <div className="grid grid-cols-6 gap-2 mb-6">
+                <h5 className="col-start-1 col-end-3">Bebé {index + 1}</h5>
+                <button
+                    type="button"
+                    onClick={() => handlerRemove(index)}
+                    className="col-span-2 col-end-7"
+                >
+                    <i className="ti ti-trash"></i>
+                </button>
+            </div>
+            <div className="relative">
+                <i className="ti ti-mood-kid absolute left-4 top-1/2 -translate-y-1/2 text-[#c4a9b4] pointer-events-none"></i>
                 <input
                     name="name"
+                    placeholder="Nombre*"
                     type="text"
                     onChange={(e) => handler(index, e.target.name, e.target.value)}
                     value={childInfo.name}
-                    className="peer ..."
+                    className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                 />
-                <p className="invisible peer-invalid:visible ...">Por favor ingrese el nombre del o la bebé</p>
-            </label>
+            </div>
 
-            <label>
-                <span>Rango de edad*</span>
+            <div className="relative">
+                <i className="ti ti-baby-carriage absolute left-4 top-1/2 -translate-y-1/2 text-[#c4a9b4] pointer-events-none"></i>
                 <select
                     name="ageRange"
                     onChange={(e) => handler(index, e.target.name, e.target.value)}
                     value={childInfo.ageRange}
-                    className="peer ..."
+                    className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                 >
+                    <option value="" disabled>Rango de edad en meses</option>
                     <option value="0-6">0-6</option>
                     <option value="7-12">7-12</option>
                     <option value="13-24">13-24</option>
                     <option value="25-36">25-36</option>
                 </select>
-                <p className="invisible peer-invalid:visible ..."></p>
-            </label>
+            </div>
 
-            <label>
-                <span>Genero</span>
+            <div className="relative">
+                <i className="ti ti-baby-bottle absolute left-4 top-1/2 -translate-y-1/2 text-[#c4a9b4] pointer-events-none"></i>
                 <select
                     name="gender"
                     onChange={(e) => handler(index, e.target.name, e.target.value)}
                     value={childInfo.gender === undefined ? '' : childInfo.gender}
-                    className="peer ..."
+                    className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                 >
+                    <option value="" disabled>Selecciona genero</option>
                     <option value="femenino">Femenino</option>
                     <option value="masculino">Masculino</option>
                     <option value="no_dice">Prefiero no decirlo</option>
                 </select>
-                <p className="invisible peer-invalid:visible ..."></p>
-            </label>
+            </div>
 
-            <label>
-                <span>Descripción del/la bebé</span>
+            <div className="relative">
+                <i className="ti ti-file-text absolute left-4 top-1/2 -translate-y-1/2 text-[#c4a9b4] pointer-events-none"></i>
                 <input
                     name="message"
+                    placeholder="Descripción"
                     type="text"
                     onChange={(e) => handler(index, e.target.name, e.target.value)}
                     value={childInfo.message === undefined ? '' : childInfo.message}
-                    className="peer ..."
+                    className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                 />
-                <p className="invisible peer-invalid:visible ..."></p>
-            </label>
-
-            <button
-                type="button"
-                onClick={() => handlerRemove(index)}
-            >
-                Eliminar
-            </button>
+            </div>
         </div>
     )
 }
