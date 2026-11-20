@@ -7,14 +7,14 @@ export const ChildForm = ({handler, handlerRemove, childInfo, index}: ChildFormP
     
     return (
         <div className="bg-[#fff] rounded-xl p-4 my-2 space-y-4">
-            <div className="grid grid-cols-6 gap-2 mb-6">
-                <h5 className="col-start-1 col-end-3">Bebé {index + 1}</h5>
+            <div className="flex justify-between items-center gap-2 mb-6">
+                <h5>Bebé {index + 1}</h5>
                 <button
                     type="button"
                     onClick={() => handlerRemove(index)}
-                    className="col-span-2 col-end-7"
+                    className="transition hover:rotate-12 hover:scale-125"
                 >
-                    <i className="ti ti-trash"></i>
+                    <i className="ti ti-trash text-[#ee6794] transition hover:text-[#f80053]"></i>
                 </button>
             </div>
             <div className="relative">
@@ -38,9 +38,10 @@ export const ChildForm = ({handler, handlerRemove, childInfo, index}: ChildFormP
                     className="w-full px-4 py-3 bg-white border border-pink-100 rounded-xl text-sm focus:border-pink-400 focus:outline-none transition pl-11 placeholder:text-[#c4a9b4]"
                 >
                     <option value="" disabled>Rango de edad en meses</option>
-                    <option value="0-6">0-6</option>
-                    <option value="7-12">7-12</option>
-                    <option value="13-24">13-24</option>
+                    <option value="6-8">6-8</option>
+                    <option value="9-12">9-12</option>
+                    <option value="13-18">13-18</option>
+                    <option value="19-24">19-24</option>
                     <option value="25-36">25-36</option>
                 </select>
             </div>

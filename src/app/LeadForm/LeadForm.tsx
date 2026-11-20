@@ -16,7 +16,7 @@ export const LeadForm = () => {
         caregiverDataAuthorization: false,
         children: [{
             name: '',
-            ageRange: '0-6',
+            ageRange: '6-8',
             gender: '',
             message: ''
         }]
@@ -59,7 +59,7 @@ export const LeadForm = () => {
         setLeadData((prev) => {
             const newChild: Child = {
                 name: '',
-                ageRange: '0-6',
+                ageRange: '6-8',
                 gender: '',
                 message: ''
             }
@@ -110,7 +110,7 @@ export const LeadForm = () => {
                 caregiverDataAuthorization: false,
                 children: [{
                     name: '',
-                    ageRange: '0-6',
+                    ageRange: '6-8',
                     gender: '',
                     message: ''
                 }]
@@ -137,7 +137,7 @@ export const LeadForm = () => {
     return (
         <div className="grid gap-4 w-4/5 bg-[#fbeaf0] place-self-center py-[18px] text-[#8a3d5a] rounded-xl">
             <div className="place-self-center w-4/5 grid gap-4">
-                <h4 className="place-self-center">Cuéntanos de tu bebé</h4>
+                <h2 className="place-self-center text-2xl">Cuéntanos de tu bebé</h2>
                 <form
                     onSubmit={onSubmit}
                     className="space-y-4"
@@ -193,7 +193,7 @@ export const LeadForm = () => {
                     <button
                         type="button"
                         onClick={handlerAdd}
-                        className="text-[#d4537e]"
+                        className="text-[#ee6794] hover:text-[#f80053]"
                     >
                         + Agregar otro bebé
                     </button>
@@ -207,13 +207,13 @@ export const LeadForm = () => {
                             checked={leadData.caregiverDataAuthorization}
                             className="accent-pink-500"
                         />
-                        <span className="grow">Autoriza el tratamiento de sus datos personales.</span>
+                        <span className="grow">Autorizas el tratamiento de tus datos personales.</span>
                     </div>
 
                     
                     <button
                         type="submit"
-                        className="flex items-center justify-center gap-2 bg-[#d85a30] w-full p-2 rounded-xl text-[#fff]"
+                        className="flex items-center justify-center gap-2 bg-[#ee8b8b] w-full p-2 rounded-xl text-[#fff] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#ff4141]"
                     >
                         <i className="ti ti-send"></i>
                         Enviar

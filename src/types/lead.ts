@@ -1,4 +1,4 @@
-export type AgeRange = '0-6' | '7-12' | '13-24' | '25-36'
+export type AgeRange = '6-8' | '9-12' | '13-18' | '19-24' | '25-36'
 
 export interface Child {
     name: string;
